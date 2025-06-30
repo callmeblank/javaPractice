@@ -1,5 +1,7 @@
 package Chap7;
 
+
+
 public class Shape {
     public void rotate(){System.out.println("Rotate 90 degree");}
     public void makeSound(){System.out.println("Bip bip bip");}
