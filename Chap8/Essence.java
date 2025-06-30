@@ -12,5 +12,13 @@ public class Essence{
         Object notACat = getObject(myCat);
         //notACat can't call age() method defined in Feline class anymore.
         System.out.println(notACat.getClass());
+        //But there's a way to cast object things back to my Cat
+        Cat myBigCat = null;
+        if (notACat instanceof Cat){
+            System.out.println("A cat in disguise");
+            myBigCat = (Cat) notACat;
+        }
+        
+        myBigCat.age();
     }
 }
