@@ -16,6 +16,13 @@ public class Triangle extends Shape{
             System.out.println("Have a good day");
         }
     }
+    //an overload function MUST have different args. if not the compiler assumes you override a method.
+    //you can't just change return type without changing args.\
+    //access level can varies
+    public int move(int steps){
+        System.out.println("Move " + steps + " steps");
+        return steps + 1;
+    }
     public static void main(String[] args){
         Triangle tri = new Triangle();
         tri.rotate();
