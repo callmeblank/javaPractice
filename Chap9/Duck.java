@@ -1,9 +1,9 @@
 package Chap9;
 
 public class Duck {
-    String name;
-    int age;
-    double weight;
+    private String name;
+    private int age;
+    private double weight;
     //if we don't write constructor the compiler writes it. it looks like this
     public Duck(){}
     //default constructor do job for us. it assigns default values for our instance variable
@@ -13,6 +13,16 @@ public class Duck {
         age = dage;
         weight = dweight;
     }
+    //getter
+    public String getName(){return name;}
+    public int getAge(){return age;}
+    public double getWeight(){return weight;}
+
+    //setter
+    public void setName(String dName){name = dName;}
+    public void setAge(int dAge){age = dAge;}
+    public void setWeight(double dWeight){weight = dWeight;}
+
     public void makeSound(){System.out.println("Quack quack");}
     public static void main(String[] args){
         //Duck() looks like an method, but it is not. It's constructor (code that runs when 
@@ -20,12 +30,13 @@ public class Duck {
         
         Duck myDuck = new Duck();
         
-        myDuck.age = 10;
-        myDuck.weight = 20.3;
+        myDuck.setAge(10);
+        myDuck.setName("Me");
+        myDuck.setWeight(12.3);
         Duck herDuck = new Duck("Bock", 2, 20.3);
         System.out.println("Her duck: ");
-        System.out.println("name: " + herDuck.name);
-        System.out.println("Age: " + herDuck.age);
-        System.out.println("weight: " + herDuck.weight);
+        System.out.println("name: " + herDuck.getName());
+        System.out.println("Age: " + herDuck.getAge());
+        System.out.println("weight: " + herDuck.getWeight());
     }
 }
