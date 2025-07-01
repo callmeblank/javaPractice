@@ -13,6 +13,7 @@ public class Duck {
         age = dage;
         weight = dweight;
     }
+    public void makeSound(){System.out.println("Quack quack");}
     public static void main(String[] args){
         //Duck() looks like an method, but it is not. It's constructor (code that runs when 
         //you instantiate)
