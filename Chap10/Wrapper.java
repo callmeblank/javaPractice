@@ -5,7 +5,7 @@ public class Wrapper {
     public static void main(String[] args){
         //before java5.0 we have to can't use add directly with int. we use add(Integet(3)) instead.
         //because ArrayList return instance variable not primitive type. but now in java5.0 or latter
-        //it is done automatically
+        //int is cast to Integer and Integer is converted back to int automatically.
         ArrayList<Integer> ages = new ArrayList<>();
         ages.add(3);
         ages.add(4);
@@ -24,5 +24,7 @@ public class Wrapper {
             } else
                 System.out.println("Ages in " + displayIndex + "th position: " + ages.get(i));
         }
+        //static method of Integer: parseInt(String s);
+        System.out.println("\n\nStatic method parseInt of Integer: " + Integer.parseInt("120"));
     }
 }
