@@ -6,7 +6,8 @@ public class Sharing {
     //every instances of this class shares the same sCount variable
     private static int sCount = 0;
     //mark one variable as static final make it constants. just like Math.PI
-    private static final String root = "God of all Duck";
+    //name convention: constant should be all cap
+    private static final String ROOT = "God of all Duck";
     public Sharing(){
         sCount++;
         System.out.println("Sharing number " + sCount + " is created");
@@ -18,6 +19,6 @@ public class Sharing {
             Sharing share = new Sharing();
             mySharing[i] = share;
         }
-        System.out.println("Root: " + root);
+        System.out.println("Root: " + Sharing.ROOT);
     }
 }
