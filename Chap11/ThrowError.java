@@ -13,5 +13,8 @@ public class ThrowError {
             System.out.println("Can't be random with 0 or 1");
             er.printStackTrace();
         }
+        finally{ // finally block is the code will be run no matter what.
+            System.out.println("Hello World!");
+        }
     }
 }
