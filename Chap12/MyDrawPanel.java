@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class MyDrawPanel extends JPanel implements ActionListener {
+public class MyDrawPanel extends JPanel{
     JFrame frame;
     public static void main(String[] args){
         MyDrawPanel mdPanel = new MyDrawPanel();
@@ -18,17 +18,15 @@ public class MyDrawPanel extends JPanel implements ActionListener {
         JButton cButton = new JButton("Change color");
         frame.getContentPane().add(BorderLayout.CENTER, mdPanel);
         frame.getContentPane().add(BorderLayout.SOUTH, cButton);
-        //add listener here
-        cButton.addActionListener(this);
+        //connect cButton with Changing color.
+        //This is better than let JPanel connect with cButton because it's not OO at all.
+        cButton.addActionListener(new ChangingColor());
         
 
         //set things
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
         frame.setVisible(true);
-    }
-    public void actionPerformed(ActionEvent e){
-        frame.repaint();
     }
     //this is abstract method from JPanel you have to implement. 
     //And you DON'T call it, it is called automatically, g is an object of Graphics2D (subclass of Graphics).
@@ -56,5 +54,11 @@ public class MyDrawPanel extends JPanel implements ActionListener {
         //set random color
         g2d.setPaint(gradientColor);
         g2d.fillOval(20, 50, 100, 100);
+    }
+    //This is called inner class. it is tied to MyDrawPanel object uniquely
+    class ChangingColor implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+            frame.repaint();
+        }
     }
 }
