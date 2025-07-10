@@ -13,8 +13,8 @@ public class MovingBall extends JPanel{
     }
     public void move(){
         frame = new JFrame();
+        frame.setBackground(Color.GREEN);
         //add ball
-        frame.getContentPane().setBackground(Color.gray);
         frame.getContentPane().add(BorderLayout.CENTER, this);
 
         //display
@@ -25,16 +25,19 @@ public class MovingBall extends JPanel{
         for (int i = 0 ; i < 300; i++){
             x++;
             y++;
-            this.frame.repaint();
+            this.repaint();
             try{
                 Thread.sleep(30);
             } catch (Exception ex){}
         }
     }
+    MovingBall(){
+        this.setOpaque(true);
+    }
     public void paintComponent(Graphics g){
         //set background drakGray
-        g.setColor(Color.darkGray);
-        g.fillRect(0, 0, this.getWidth(), this.getHeight());
+        // g.setColor(Color.darkGray);
+        // g.fillRect(0, 0, this.getWidth(), this.getHeight());
 
         //create a ball with x, y coordinate
         g.setColor(Color.CYAN);
