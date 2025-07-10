@@ -1,7 +1,5 @@
 package Chap14;
 
-import java.io.Serializable;
-
 public class LittleCardBox{
     private int age;
     private double height;
