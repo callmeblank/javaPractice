@@ -8,6 +8,7 @@ public class MovingBall extends JPanel{
     int x, y;
     public static void main(String[] args){
         MovingBall moving = new MovingBall();
+        System.out.println(moving.isOpaque());
         moving.move();
     }
     public void move(){
@@ -24,7 +25,7 @@ public class MovingBall extends JPanel{
         for (int i = 0 ; i < 300; i++){
             x++;
             y++;
-            frame.repaint();
+            this.frame.repaint();
             try{
                 Thread.sleep(30);
             } catch (Exception ex){}
@@ -32,8 +33,8 @@ public class MovingBall extends JPanel{
     }
     public void paintComponent(Graphics g){
         //set background drakGray
-        // g.setColor(Color.darkGray);
-        // g.fillRect(0, 0, this.getWidth(), this.getHeight());
+        g.setColor(Color.darkGray);
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());
 
         //create a ball with x, y coordinate
         g.setColor(Color.CYAN);
